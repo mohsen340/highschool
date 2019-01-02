@@ -1,0 +1,356 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+
+}
+
+
+.wrapper
+{
+	margin: 0 auto;
+	max-width: 1280px;
+	display: block;
+	
+
+}
+.row::after
+{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+body
+{
+	direction: rtl;
+	font-family: B yekan;
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+a
+{
+	text-decoration: none; 
+}
+#topmenu
+{	top:0px;
+	width: 100%;
+	height: 50px;
+	background-color:#9c2637;
+	position: fixed;
+	z-index: 1;
+	border-bottom: 2px solid white;
+}
+#topmenu ul
+{
+
+	border-top: 1px solid white;
+    font-size: 20px;
+    background-color: #9c2637;
+    top:100%;
+    width: 100%;
+    max-width: 1280px;
+    position: absolute;
+    line-height: 250%;
+    display: none;
+}
+#topmenu a
+{
+	display: block;
+	font-size: 20px;
+	padding-right: 30px;
+	border-bottom: 1px solid white;
+	color: white;
+	transition: 0.3s;
+}
+#topmenu a:hover
+{
+	background-color: white;
+	color: #222;
+	text-decoration: none;
+}
+#button1
+{
+	position: fixed;
+	right: 20px;
+	top: 10px;
+	border: 1px solid white;
+	border-radius: 5px;
+	z-index: 2;
+	cursor: pointer;
+}
+
+
+#header
+{
+	color: white;
+	min-height: 645px;
+	background-image: url('http://localhost/highschool/img/photo_2018-12-08_10-01-39.jpg');
+	margin-top: 51px;
+	padding: 10px;
+	background-size: cover;
+	background-position: center center;
+
+
+}
+#header h1
+{
+	margin: 20px;
+}
+.box
+{
+width: 100%;
+	height:57px;
+	float: right;
+	margin:7px auto; 
+	margin-bottom: 0;
+	background-color: #a0bf7c;
+}
+#header h2
+{
+	font-size: 15px;
+	color: black;
+	letter-spacing: 1px;
+	direction: rtl;
+	display: inline-block;
+	margin: 5px 5px;
+	text-align: center;
+	
+}
+#content
+{
+	margin-top: 15px;
+}
+#content .group
+{
+	margin-bottom: 30px;
+
+}
+.border-h2
+{
+	font-size: 25px;
+	text-align: right;
+	line-height: 200%;
+	border-bottom: 3px solid #9c2637;
+}
+#content article
+{
+	text-align: center;
+	margin: 15px auto;
+	max-width: 340px;
+	box-shadow: 0 0 0 1px white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+#content article:hover
+{
+  box-shadow: 	0 3px 10px 2px #ccc;
+}
+#content .img
+{
+	overflow: hidden;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+#content .img img
+{
+	width: 100%;
+	transition: 0.4s;
+	display: block;
+	height: 200px;
+}
+#content article:hover .img img
+{
+	transform: scale(1.1);
+}
+#content article h3
+{
+	color: black;
+	font-weight:normal;
+	padding-top: 15px;
+	margin: 10px 8px 0 8px;
+	font-size: 16px;
+	overflow: hidden;
+	height: 70px; 
+	text-align: center;
+    font-family:B roya;
+    color: red; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.3); 
+    letter-spacing:1px; 
+}
+#sidebar
+{
+	margin-top: 15px;
+}
+#sidebar .group
+{
+	margin-bottom: 30px;
+
+}
+#sidebar .group h2
+{
+	font-size: 25px;
+	text-align: right;
+	line-height: 200%;
+	border-bottom: 3px solid #9c2637;
+}
+#sidebar article
+{
+	text-align: center;
+	box-shadow: 0 0 0 1px white;
+}
+
+#sidebar .submenu li
+{
+	width: 100%;
+	transition: 0.4s;
+	display: block;
+}
+#sidebar p
+{
+	
+	position: relative;
+	
+    width: 100%;
+	transition: 0.4s;
+    padding-bottom:  10px;
+    padding-top: 5px;
+    margin-top: 5px;
+color: black;
+}
+
+#sidebar article:hover .p
+{
+	transform: scale(1.1);
+}
+
+#detail
+{
+	border-top: 3px solid #9c2637;
+	background-color: #222;
+	padding: 15px 0 30px 0;
+}
+#detail h3
+{
+	font-size: 20px;
+	color: white;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	text-align: center;
+    font-family: roya;
+    border-bottom: 1px solid #555;
+
+}
+#detail .about
+{
+	
+	margin-bottom:  10px;
+	
+}
+#detail p
+{
+	font-size: 14px;
+	color: #999;
+	text-align: justify;
+	padding:0 10px;
+}
+
+#detail li
+{
+	text-align: center;
+	font-size: 14px;
+	color: #999;
+	margin-top: 15px;
+}
+#detail .mail,#detail .phone
+{
+	direction:ltr;
+}
+#detail .mail img,#detail .phone img
+{
+height: 24px;
+	width: 24px;
+	border-radius: 30px;
+	vertical-align: -7px;
+	margin-right: 10px;
+}
+
+
+
+@media(min-width: 1140px)
+{
+#sidebar article
+{
+	text-align: right;
+}
+#sidebar p
+{
+	border-bottom: 1px solid #ccc;
+}	
+}
+
+
+
+
+@media(min-width: 960px)
+{
+	#button1
+	{
+		display: none;
+	}
+	#topmenu ul
+{
+	border: none;
+	position: static;
+	display: flex !important;
+}
+#topmenu a
+{
+	
+	padding:0 30px;
+	margin: 0 2px;
+	border: none;
+
+}
+#content article h3
+{
+	font-size: 14px;
+}
+#sidebar article h3
+{
+	font-size: 14px;
+}
+#detail li
+{
+	font-size: 16px;
+}
+
+}
+@media(min-width: 590px)
+{
+	.box
+	{
+	height:38px;	
+	}
+	#header h2
+	{
+		margin: 7px 5px;
+	}
+}
+@media(min-width: 1140px)
+{
+	main > div{
+		display: flex;
+	}
+	main > div > div{
+		order: 2;
+	}
+}
+.post-img{
+	max-height: 600px;
+	max-width: 80%;
+}
+

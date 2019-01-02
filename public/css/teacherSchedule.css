@@ -1,0 +1,16 @@
+#list1,#list2,#list3,#list4
+{
+
+    max-height: 400px;
+    background-color: white;
+    width:50%;
+    margin-right: 25%;
+    direction: rtl;
+    top: 50px;
+    z-index: 1;
+
+    /*line-height: 270%;*/
+    transition:2s;
+    box-shadow: 0 0 3px black;
+    text-align: center;
+}
