@@ -23,10 +23,10 @@ class Lesson extends Model
     }
 
     public function marks(){
-      return $this->hasMany('App\Marks');
+      return $this->hasMany('App\Mark');
     }
 
     public function homeWorks(){
-      return $this->hasMany('App\HomeWork');
+      return $this->hasMany('App\HomeWork')->orderBy('id', 'desc');
     }
 }

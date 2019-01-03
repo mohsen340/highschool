@@ -57,16 +57,21 @@
     <tr>
         <td>1</td>
         <td>{{$lesson->name}}</td>
-        <form action="" method="">
+        <form action="{{route('teacher-student-marks-insert')}}" method="post">
+{{--        <form action="{{route('t1')}}" method="post">--}}
             @csrf
             @php($size = sizeof($marks))
             @php($nulls = 20 - $size)
             @foreach($marks as $mark)
-                <td><input class="number-input" type="number" value="{{$mark->mark}}" name="mark[]"></td>
+                @if(is_null($mark->mark))
+                <td><input class="number-input" type="number" value="" name="marks[]"></td>
+                @else
+                <td><input class="number-input" type="number" value="{{$mark->mark}}" name="marks[]"></td>
+                @endif
             @endforeach
 
             @for($i=0 ; $i<$nulls; $i++)
-                <td><input class="number-input" type="number" name="mark[]"></td>
+                <td><input class="number-input" type="number" name="marks[]"></td>
             @endfor
 
         {{--<td><input class="number-input" type="number" name="mark[]"></td>--}}
@@ -93,7 +98,8 @@
         {{--<td><input class="number-input" type="number" name="mark[]"></td>--}}
         {{--<td><input class="number-input" type="number" name="mark[]"></td>--}}
         {{--<td><input class="number-input" type="number" name="mark[]"></td>--}}
-
+            <input type="hidden" value="{{$student->id}}" name="student_id">
+            <input type="hidden" value="{{$lesson->id}}" name="lesson_id">
         <td><input class="btn-main" type="submit" value="ثبت" ></td>
         </form>
     </tr>

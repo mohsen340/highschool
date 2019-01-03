@@ -23,24 +23,24 @@
                     <ul>
 
                         <li class="box">
-                            <h2>نام: <h3>فرانک </h3></h2>
+                            <h2>نام: <h3> {{$user->first_name}} </h3></h2>
                         </li>
 
                         <li class="box">
-                            <h2> نام خانوادگی : <h3> فتحی</h3></h2>
+                            <h2> نام خانوادگی : <h3> {{$user->last_name}}</h3></h2>
                         </li>
 
                         <li class="box">
-                            <h2>شماره ملی : <h3>1490420223</h3></h2>
+                            <h2>شماره ملی : <h3>{{$user->national_code}}</h3></h2>
                         </li>
 
                         <li class="box">
-                            <h2>نام پدر : <h3>نواب صفوی </h3></h2>
+                            <h2>نام پدر : <h3>{{$user->father_name}} </h3></h2>
                         </li>
 
 
                         <li class="box">
-                            <h2> کلاس : <h3>اول</h3></h2>
+                            <h2> کلاس : <h3>{{$grade->name}}</h3></h2>
                         </li>
 
 

@@ -22,7 +22,7 @@
 
 
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                    <a href="{{route('admin-class-schedule')}}">
+                    <a href="{{route('admin-class-schedule', 1)}}">
                         <article>
 
                             <div class="img" >
@@ -36,7 +36,7 @@
                     </a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                    <a href="{{route('admin-class-schedule')}}">
+                    <a href="{{route('admin-class-schedule', 2)}}">
                         <article>
 
                             <div class="img" >
@@ -52,7 +52,7 @@
 
 
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                    <a href="{{route('admin-class-schedule')}}">
+                    <a href="{{route('admin-class-schedule', 3)}}">
                         <article>
 
                             <div class="img" >
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                    <a href="{{route('admin-class-schedule')}}">
+                    <a href="{{route('admin-class-schedule', 4)}}">
                         <article>
 
                             <div class="img" >

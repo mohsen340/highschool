@@ -27,7 +27,8 @@ class User extends Authenticatable
 
 
     public function lessons(){
-      return $this->belongsToMany('App\Lesson', 'user_lesson', 'user_id', 'lesson_id');
+      $grade = $this->grade()->first();
+      return $grade->lessons();
     }
 
     public function teacherInfo(){
@@ -38,15 +39,19 @@ class User extends Authenticatable
       return $this->hasMany('App\Lesson', 'teacher_id');
     }
 
-    public function teacherSchedule(){
+    public function teacherSchedules(){
+      $lessons = $this->hasMany('App\Lesson', 'teacher_id')->get();
       $schedules = array();
-      $lessons = $this->teacherLessons()->get();
       foreach ($lessons as $lesson){
-        $schedules [] = $lesson->schedules;
+        if(sizeof($lesson->schedules) > 0){
+          $schedules [] = $lesson->schedules;
+        }
       }
 
       return $schedules;
     }
+
+
 
     public function grade(){
       return $this->belongsToMany('App\Grade', 'user_grade', 'user_id', 'grade_id');
@@ -70,9 +75,11 @@ class User extends Authenticatable
 
     public function schedules(){
       $schedules = array();
-      $lessons = $this->lessons()->get();
+      $lessons = $this->lessons;
       foreach ($lessons as $lesson){
-        $schedules [] = $lesson->schedules;
+        if(sizeof($lesson->schedules) > 0) {
+          $schedules [] = $lesson->schedules;
+        }
       }
       return $schedules;
     }

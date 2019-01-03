@@ -28,55 +28,36 @@
         <div id="content" class="group col-xs-12 col-lg-9">
                 <h2 class="border-h2">اخبار </h2>
             <section class="group row">
+                @foreach($main_posts as $main_post)
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <article>
-                        <a href="{{url('/post')}}">
+                        <a href="{{route('post-show', $main_post->id)}}">
                             <div class="img">
-                                <img src="{{asset('img/photo_2018-12-08_10-16-26.jpg')}}">
+                                <img src="{{asset($main_post->image_path)}}">
 
                             </div>
-                            <h3>مانور زلزله </h3>
+                            <h3>{{$main_post->title}} </h3>
                         </a>
 
                     </article>
                 </div>
+                @endforeach
 
 
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <article>
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{asset('img/photo_2018-12-08_10-22-52.jpg')}}">
 
-                            </div>
-                            <h3>راهپیمایی 13 آبان </h3>
-                        </a>
 
-                    </article>
-                </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <article>
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{asset('img/photo_2018-12-08_10-30-36.jpg')}}">
-
-                            </div>
-                            <h3>آغار سال تحصیلی </h3>
-                        </a>
-
-                    </article>
-                </div>
             </section>
         </div>
         <aside id="sidebar" class="col-xs-12 col-lg-3">
                 <h2 class="border-h2">اخبار </h2>
             <section class="group row">
+                @foreach($posts as $post)
                 <div class="col-xs-12">
                     <article>
-                        <a href="#">
+                        <a href="{{route('post-show', $post->id)}}">
                             <div class="p">
-                                <p>انتخابات شورای مدرسه</p>
+                                <p>{{$post->title}}</p>
 
                             </div>
 
@@ -84,90 +65,9 @@
                     </article>
 
                 </div>
-                <div class="col-xs-12">
-                    <article>
-                        <a href="#">
-                            <div class="p">
-                                <p>هفته معلم </p>
+                    @endforeach
 
-                            </div>
 
-                        </a>
-
-                    </article>
-                </div>
-                <div class="col-xs-12">
-                    <article>
-                        <a href="#">
-                            <div class="p">
-                                <p>هفته تربیت بدنی </p>
-                            </div>
-
-                        </a>
-
-                    </article>
-                </div>
-                <div class="col-xs-12">
-                    <article>
-                        <a href="#">
-                            <div class="p">
-                                <p>تقدیر از دانش آموزان تلاشگر </p>
-
-                            </div>
-
-                        </a>
-
-                    </article>
-                </div>
-                <div class="col-xs-12">
-                    <article>
-                        <a href="#">
-                            <div class="p">
-                                <p>همایش صبحگاهی</p>
-
-                            </div>
-
-                        </a>
-
-                    </article>
-                </div>
-                <div class="col-xs-12">
-                    <article>
-                        <a href="#">
-                            <div class="p">
-                                <p>هفته معلم</p>
-
-                            </div>
-
-                        </a>
-
-                    </article>
-                </div>
-                <div class="col-xs-12">
-                    <article>
-                        <a href="#">
-                            <div class="p">
-                                <p>امتحانات میان ترم</p>
-
-                            </div>
-
-                        </a>
-
-                    </article>
-                </div>
-                <div class="col-xs-12">
-                    <article>
-                        <a href="#">
-                            <div class="p">
-                                <p>هفته بسیج</p>
-
-                            </div>
-
-                        </a>
-
-                    </article>
-
-                </div>
             </section>
         </aside>
     </div>

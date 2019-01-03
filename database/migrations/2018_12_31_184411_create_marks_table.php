@@ -17,7 +17,7 @@ class CreateMarksTable extends Migration
             $table->increments('id');
             $table->integer('lesson_id');
             $table->integer('user_id');
-            $table->float('mark');
+            $table->float('mark')->nullable();
             $table->integer('week_num');
             $table->timestamps();
           $table->softDeletes();

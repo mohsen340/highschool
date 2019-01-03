@@ -21,10 +21,12 @@ class Grade extends Model
     }
 
     public function schedules(){
-      $lessons = $this->lessons()->get();
+      $lessons = $this->hasMany('App\Lesson')->get();
       $schedules = array();
       foreach ($lessons as $lesson){
-        $schedules [] = $lesson->schedules;
+        if(sizeof($lesson->schedules) > 0){
+          $schedules [] = $lesson->schedules;
+        }
       }
       return $schedules;
     }

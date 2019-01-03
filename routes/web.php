@@ -15,30 +15,11 @@ use Illuminate\Http\Request;
 
 
 
-Route::get('/',function (){
-    return view('site.home');
-})->name('site-home');
-
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
-//test
-Route::get('/t1',function(){
-  $users = \App\Grade::find(1)->students;
-  return json_encode($users);
-});
-
-
-//site route
-
-Route::get('/post',function(){
-    return view('site.post');
-});
+Route::get('/', 'SiteController@homePage')->name('site-home');
+Route::get('/post-show/{id}', 'SiteController@postShow')->name('post-show');
 
 
 
@@ -53,9 +34,9 @@ Route::get('/admin-post', 'AdminController@post')->name('admin-post');
 Route::post('/admin-post-create', 'AdminController@postCreate')->name('admin-post-create');
 Route::get('/admin-schedule', 'AdminController@schedule')->name('admin-schedule');
 Route::get('/admin-students-schedule', 'AdminController@studentsSchedule')->name('admin-students-schedule');
+Route::get('/admin-class-schedule/{id}', 'AdminController@classSchedule')->name('admin-class-schedule');
+Route::post('/admin-class-schedule-insert', 'AdminController@scheduleInsert')->name('admin-class-schedule-insert');
 
-
-Route::get('/admin-class-schedule', 'AdminController@classSchedule')->name('admin-class-schedule');
 
 
 //Route::get('/admin-teachers-schedule',function (){
@@ -72,41 +53,24 @@ Route::get('/teacher-classes-homework', 'TeacherController@classesHomework')->na
 Route::get('/teacher-class-homework/{id}', 'TeacherController@classHomework')->name('teacher-class-homework');
 Route::post('/teacher-class-homework-create', 'TeacherController@classHomeworkCreate')->name('teacher-class-homework-create');
 Route::get('/teacher-classes-Marks', 'TeacherController@classesMarks')->name('teacher-classes-marks');
-
 Route::get('/teacher-student-marks/{id}', 'TeacherController@studentMarks')->name('teacher-student-marks');
-
-Route::get('/teacher-schedule',function (){
-  return view('teacher.teacherSchedule');
-})->name('teacher-schedule');
+Route::post('/teacher-student-marks-insert', 'TeacherController@studentInsertMarks')->name('teacher-student-marks-insert');
+Route::get('/teacher-schedule', 'TeacherController@schedule')->name('teacher-schedule');
 
 
 
 
 
 //student route
-Route::get('/student-dashboard',function (){
-    return view('student.dashboard');
-})->name('student-dashboard');
 
-Route::get('/parent-dashboard',function (){
-    return view('parent.dashboard');
-})->name('parent-dashboard');
 
-Route::get('/parent-student-marks',function (){
-    return view('parent.studentMarks');
-})->name('parent-student-marks');
+Route::get('/parent-dashboard', 'ParentController@dashboard')->name('parent-dashboard');
+Route::get('/parent-student-schedule', 'ParentController@schedule')->name('parent-student-schedule');
+Route::get('/parent-student-marks', 'ParentController@marks')->name('parent-student-marks');
 
-Route::get('/parent-student-workbook',function (){
-    return view('parent.studentWorkbook');
-})->name('parent-student-workbook');
+Route::get('/parent-student-homework', 'ParentController@homework')->name('parent-student-homework');
 
-Route::get('/parent-student-homework',function (){
-    return view('parent.studentHomework');
-})->name('parent-student-homework');
 
-Route::get('/parent-student-schedule',function (){
-    return view('parent.studentSchedule');
-})->name('parent-student-schedule');
 
 
 
